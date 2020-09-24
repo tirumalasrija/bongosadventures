@@ -1,0 +1,26 @@
+body.single {
+
+    // Featured image
+    .featured-image {
+        @include margin( 0 auto $base-spacing auto);
+        text-align: center;
+        float: none;
+        width: 100%;
+        max-width: 100%;
+
+        @include media($small-screen-up) {
+            max-width: 40%;
+        }
+
+        @include media($medium-screen-up) {
+            @include margin(0 0 $base-spacing $base-spacing);
+            float: right;
+            width: auto;
+        }
+
+        img {
+            // Removes bottom spacing from inline image
+            vertical-align:text-bottom;
+        }
+    }
+}

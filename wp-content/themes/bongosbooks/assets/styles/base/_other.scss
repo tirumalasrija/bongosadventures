@@ -1,0 +1,33 @@
+$small-spacing: 1em !default;
+$light-gray: #ddd !default;
+$dark-gray: #999 !default;
+$caption-background: $light-gray;
+$caption-font-size: 0.85em;
+$caption-color: $dark-gray;
+
+// Figures
+figure {
+    margin: 0 auto $base-spacing;
+    max-width: 100%;
+
+    img[class*="wp-image-"] {
+        display: block;
+        margin-bottom: 0;
+
+        @include media(max-width $medium-screen) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+figcaption {
+    background-color: $light-gray;
+    text-align: center;
+    font-style: italic;
+    font-size: $caption-font-size;
+}
+
+// Address
+address {
+    margin-bottom: $small-spacing;
+}

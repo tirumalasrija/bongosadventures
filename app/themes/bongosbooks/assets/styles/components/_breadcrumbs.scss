@@ -1,0 +1,10 @@
+.breadcrumbs {
+    display: none;
+    margin-bottom: 0;
+
+    @include media( $medium-screen-up ) {
+        display: inline-block;
+        background: $white;
+        padding: 2px $base-spacing;
+    }
+}

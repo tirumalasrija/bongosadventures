@@ -1,0 +1,98 @@
+//
+//  Typography
+//  _____________________________________________
+
+//  Font-family
+$primary-font-stack: "Roboto", "Helvetica Neue", sans-serif;
+$base-font-family: $primary-font-stack;
+$heading-font-family: "Passion One", sans-serif;
+$pangolin-font-family: "Pangolin", sans-serif;
+$minya-font-family: "minya-nouvelle", sans-serif;
+
+//  Font size & spacing
+$base-font-size: 18px;
+$em-base: $base-font-size;
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+//
+//  Colors
+//  Maintain separation between the color palette & functional color variables.
+//  _____________________________________________
+
+//  Palette
+$base-blue: #0099cc;
+$rich-black: #333;
+$dark-gray: #999;
+$medium-gray: #ccc;
+$light-gray: #eee;
+$white: #fff;
+$black: #000;
+
+//  Site Palette
+$fire-engine-red: #C11A24;
+$blue-stone: #0A6064;
+$valhalla: #2C2B3F;
+$eastern-blue: #189EA4;
+$supernova: #FBB731;
+$sambuca: #392216;
+$french-pass: #C8EAFB;
+$pink: #F4AECD;
+$summer-sky: #30ABDF;
+$violet-eggplant: #98138E;
+$lima: #76BB23;
+$light-purple: #f0f0f3;
+
+// Category Colors
+$math: #D18B0C;
+$health: #961D8C;
+$science: #39ACDD;
+$geography: #78B932;
+
+//  Functional
+$primary-color: $fire-engine-red;
+$action-color: $blue-stone; // Hyperlinks & buttons
+$base-border-color: $medium-gray;
+$base-background-color: white;
+$secondary-background-color: $light-gray;
+
+//  Alerts
+$alert-color: #fff6bf;
+$error-color: #fbe3e4;
+$notice-color: #e5edf8;
+$success-color: #e6efc2;
+
+//  Font
+$base-font-color: $rich-black;
+
+//  Inputs
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+//
+//  Extra
+//  _____________________________________________
+
+//  Spacing
+//  Maintain consistent spacing between elements
+$base-spacing: 20px;
+$small-spacing: $base-spacing / 2;
+$large-spacing: $base-spacing*2;
+
+//  Borders
+//  Maintain consistent borders on elements
+$base-border-radius: 20px;
+$base-border: 1px solid $base-border-color;
+
+//  Animation
+//  Maintain consistent timing on animations
+$base-duration: 0.5s;
+$base-timing: ease;
+
+//  Z-Index
+//  Assign z-indexes relative to $base-z-index to keep layering in-check
+$base-z-index: 10;
+
+//  Visual-Grid
+//  Turn on the visual-grid for a grid-overlay while developing
+$visual-grid: false;

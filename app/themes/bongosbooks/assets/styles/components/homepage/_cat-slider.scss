@@ -1,0 +1,90 @@
+section.cat-slider {
+    text-align: center;
+    .cat-bar {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: $valhalla;
+        color: white;
+
+        @include media($medium-screen-up) {
+            flex-direction: row;
+        }
+
+        li {
+            @include category-nav-variant('../images/lessons/icons/categories/0icon.png');
+            flex: 1 1 auto;
+            list-style: none;
+            a {
+                display: block;
+                font-size: 26px;
+                color: white;
+                padding: $base-spacing 0;
+                text-align: center;
+                width: 100%;
+                height: 100%;
+                text-transform: uppercase;
+                position: relative;
+
+                @include media($medium-screen-up) {
+                    padding: $large-spacing 0;
+                }
+
+                &:hover, &.clicked {
+                    background-color: $summer-sky;
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        bottom: -25px;
+                        left: 0;
+                        background-color: inherit;
+                        width:100%;
+                        height: 25px;
+                        clip-path: polygon(0 0, 50% 100%, 100% 0);
+                    }
+                }
+            }
+            &:nth-child(1) {
+                @include category-nav-variant('../images/lessons/icons/categories/1icon.png');
+            }
+            &:nth-child(2) {
+                @include category-nav-variant('../images/lessons/icons/categories/2icon.png');
+            }
+            &:nth-child(3) {
+                @include category-nav-variant('../images/lessons/icons/categories/3icon.png');
+            }
+            &:nth-child(4) {
+                @include category-nav-variant('../images/lessons/icons/categories/4icon.png');
+            }
+            &:nth-child(5) {
+                @include category-nav-variant('../images/lessons/icons/categories/5icon.png');
+            }
+            &:nth-child(6) {
+                @include category-nav-variant('../images/lessons/icons/categories/6icon.png');
+            }
+
+        }
+    }
+
+    .lesson-blocks, .category-lesson-blocks {
+        padding-top: $base-spacing;
+
+        @include media($small-screen-up) {
+            padding-top: $large-spacing;
+        }
+
+        @include media($medium-screen-up) {
+            padding-top: $large-spacing*2;
+        }
+    }
+
+    a.scribbled {
+        margin: $large-spacing 0;
+    }
+
+    @include media($small-screen-up) {
+        padding-bottom: $large-spacing;
+    }
+}

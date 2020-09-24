@@ -1,0 +1,33 @@
+{
+    "name": "tmbase",
+    "homepage": "https://tmprod.com/",
+    "authors": [
+        "Trademark Productions"
+    ],
+    "license": "MIT",
+    "private": true,
+    "dependencies": {
+        "bourbon": "~4.2.7",
+        "neat": "~1.8.0",
+        "normalize-scss": "normalize.scss#^5.0.3",
+        "owl.carousel": "^2.2.0"
+    },
+    "overrides": {
+        "owl.carousel": {
+            "main": [
+                "dist/owl.carousel.min.js",
+                "src/scss/owl.carousel.scss",
+                "src/scss/owl.theme.default.scss"
+            ]
+        },
+        "bourbon": {
+            "main": []
+        },
+        "neat": {
+            "main": []
+        },
+        "normalize-scss": {
+            "main": []
+        }
+    }
+}

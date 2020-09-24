@@ -1,0 +1,34 @@
+//
+//  WooCommerce :: My Account Page
+//  _____________________________________________
+
+body.woocommerce-account {
+    nav.woocommerce-MyAccount-navigation {
+        ul {
+            list-style: none;
+
+            li {
+                a {
+                    display: block;
+                    width: 100%;
+                    color: $white;
+                    padding: $small-spacing;
+                    background: $valhalla;
+                    font-family: $heading-font-family;
+                    font-size: em(24);
+                    border-bottom: 2px solid $french-pass;
+                    transition: letter-spacing $base-timing $base-duration;
+
+                    &:hover {
+                        background: lighten($valhalla, 20%);
+                        letter-spacing: 2px;
+                    }
+                }
+
+                &.woocommerce-MyAccount-navigation-link--downloads {
+                    display: none;
+                }
+            }
+        }
+    }
+}

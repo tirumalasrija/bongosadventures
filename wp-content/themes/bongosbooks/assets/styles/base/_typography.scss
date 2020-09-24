@@ -1,0 +1,93 @@
+body {
+    color: $base-font-color;
+    font-size: $base-font-size;
+    font-family: $base-font-family;
+    line-height: $base-line-height;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 0.5em;
+    font-weight: normal;
+    font-family: $heading-font-family;
+    line-height: $heading-line-height;
+}
+
+h1 {
+    font-size: em(60);
+}
+
+h2 {
+    font-size: em(48);
+}
+
+h3 {
+    font-size: em(36);
+    font-family: $base-font-family;
+}
+
+h4 {
+    font-size: em(28);
+}
+
+h5 {
+    font-size: em(26);
+    font-family: $pangolin-font-family;
+}
+
+p {
+    margin: 0 0 $base-spacing;
+
+    &.large {
+        font-size: 24px;
+    }
+}
+
+a {
+    color: $action-color;
+    text-decoration: none;
+    transition:
+            color $base-duration $base-timing,
+            background-color $base-duration $base-timing;
+
+    &:active,
+    &:focus,
+    &:hover {
+        color: shade($action-color, 25%);
+    }
+
+    // Remove additional space under images within hyperlinks
+    img {
+        vertical-align: bottom;
+    }
+}
+
+blockquote {
+    font-family: $base-font-family;
+    font-size: 20px;//
+}
+
+hr {
+    margin: $base-spacing 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: $base-border;
+    border-left: 0;
+}
+
+img,
+picture {
+    margin: 0;
+    max-width: 100%;
+}
+
+// For use side-wide, whenever a font should appear "handwritten"
+.handwritten {
+    font-family: $pangolin-font-family;
+}

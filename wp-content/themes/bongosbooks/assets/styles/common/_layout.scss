@@ -1,0 +1,88 @@
+//
+//  Clear an element's children.
+//  _____________________________________________
+.clearfix {
+    @include clearfix();
+}
+
+//
+//  Container
+//  Limits width to $grid-width in _variables.scss
+//  Use inside of rows in the grid layout.
+//  _____________________________________________
+.container {
+    @include outer-container();
+    @include clearfix();
+}
+
+//
+//  List styles inside Entry Content
+//  _____________________________________________
+.entry-content {
+    ul {
+        @extend %default-ul;
+    }
+    ol {
+        @extend %default-ol;
+    }
+}
+
+//
+//  Body
+//  _____________________________________________
+body {
+    @include media(min-width 600px) {
+        position: relative;
+    }
+}
+
+//
+//  Main
+//  _____________________________________________
+main {
+    padding-bottom: $base-spacing;
+}
+
+//
+//  Content
+//  _____________________________________________
+body:not(.home).content {
+    min-height: 325px;
+}
+
+//
+//  Wraps content area
+//  _____________________________________________
+.page-wrap {
+    @include pad(0 default);
+}
+
+//
+//  Main sidebar layout adjustments
+//  _____________________________________________
+body.main-sidebar {
+
+    .content {
+
+        //  Add margin below the sidebar
+        @include media(max-width $large-screen) {
+            margin-bottom: $base-spacing;
+        }
+
+        @include media($large-screen-up) {
+            @include span-columns(8);
+        }
+    }
+
+    .sidebar {
+        @include media($large-screen-up) {
+            @include span-columns(4);
+        }
+    }
+
+    // Remove margin on whichever comes last.
+    .content + .sidebar,
+    .sidebar + .content {
+        @include omega();
+    }
+}

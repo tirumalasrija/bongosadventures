@@ -1,0 +1,39 @@
+//
+//  Column classes
+//  _____________________________________________
+%column {
+    float: left;
+    margin-right: 2%;
+}
+
+.column {
+
+    //  Half
+    &.half {
+        @extend %column;
+        width: 49%;
+    }
+
+    //  Third
+    &.third {
+        @extend %column;
+        width: 32%;
+    }
+
+    //  Fourth
+    &.fourth {
+        @extend %column;
+        width: 23.5%;
+    }
+
+    //  Fifth
+    &.fifth {
+        @extend %column;
+        width: 18.4%;
+    }
+
+    //  Last column, no-margin
+    &.last {
+        @include omega();
+    }
+}

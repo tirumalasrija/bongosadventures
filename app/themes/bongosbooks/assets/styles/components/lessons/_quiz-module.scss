@@ -1,0 +1,24 @@
+//
+//  Quiz Module
+//  Appears on Lessons with quiz questions
+//  _____________________________________________
+
+.quiz-module {
+    background-color: $eastern-blue;
+    border-radius: $base-border-radius;
+    padding: $base-spacing;
+    color: $white;
+
+    h2, h4 {
+        color: $supernova;
+    }
+
+    ol {
+        list-style-type: none;
+        color: $white;
+
+        li {
+            margin-bottom: $small-spacing;
+        }
+    }
+}

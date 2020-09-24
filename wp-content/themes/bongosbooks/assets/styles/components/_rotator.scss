@@ -1,0 +1,210 @@
+//
+//  Rotator
+//  _____________________________________________
+.rotator-wrap {
+    $height: 48em;
+    $arrow-distance-from-screen: 2.5vw;
+    $arrow-color: white;
+    $banner-color: white;
+    $title-font-size: 120px;
+    $content-font-size: 48px;
+    $button-font-size: 16px;
+    $primary-color: #0099cc !default;
+    $default-slide-colors:
+            darken($primary-color, 10%),
+            darken($primary-color, 15%),
+            darken($primary-color, 20%),
+            darken($primary-color, 25%);
+
+    position: relative;
+    overflow: hidden;
+    height: $height;
+    color: $banner-color;
+    text-align: center;
+    font-size: 12px;
+    clear: left;
+
+    @include media( $medium-screen-up ) {
+        text-align: left;
+        font-size: 14px;
+    }
+
+    @include media( $large-screen-up ) {
+        font-size: $em-base;
+    }
+
+    //  Assign fallback background colors from $default-slide-colors
+    //  This covers all Owl-Carousel slides with nth-child selectors.
+    @for $i from 1 to 5 {
+        .owl-item:nth-child(#{$i}n+#{$i}) {
+            $color-from-list: nth($default-slide-colors, $i);
+            background-color: $color-from-list;
+        }
+    }
+
+    //
+    //  Slides
+    //  _____________________________________________
+    .banner {
+        @include pad(0 2.5vw);
+        height: $height;
+        background-position: top center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        h2 {
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: black;
+            margin-bottom: $small-spacing;
+            font-size: em(90px);
+            font-family: $minya-font-family;
+            font-weight: bolder;
+            max-width: 50%;
+            line-height: 1;
+            color: $supernova;
+
+            @include media($medium-screen-up) {
+                -webkit-text-stroke-width: 5px;
+                font-size: em($title-font-size);
+            }
+        }
+
+        p {
+            color: $sambuca;
+
+            &.large {
+                font-size: em($content-font-size);
+                font-family: $minya-font-family;
+            }
+        }
+
+        .button {
+            @include button(null, $fire-engine-red, null, true);
+            text-shadow: none;
+        }
+
+        img.overlay-image {
+            position: absolute;
+            right: 0;
+            top: $base-spacing;
+            transition: 2s ease;
+            width: auto;
+        }
+
+        .callout {
+            display: block;
+            width: 100%;
+            background-color: $eastern-blue;
+            position: relative;
+            border-radius: $base-border-radius;
+            top: em(150);
+
+            h3 {
+                padding: $small-spacing;
+                width: 100%;
+                background-color: $blue-stone;
+                margin: 0;
+                color: $supernova;
+                font-family: $heading-font-family;
+                font-size: em(48);
+                border-top-left-radius: $base-border-radius;
+                border-top-right-radius: $base-border-radius;
+
+                @include media($medium-screen-up) {
+                    padding: $base-spacing 400px $base-spacing $large-spacing;
+                }
+            }
+
+            .button {
+                @include button(null, $supernova, $blue-stone, true);
+            }
+
+            > .content {
+                position: relative;
+                padding: $base-spacing $large-spacing;
+                width: 100%;
+                z-index: 2;
+
+                p {
+                    color: $white;
+                }
+
+                @include media($medium-screen-up) {
+                    width: 70%;
+                }
+            }
+
+            img {
+                width: 30%;
+                max-width: 400px;
+                position: absolute;
+                bottom: 25px;
+                right: $base-spacing;
+                z-index: 1;
+                display: none;
+
+                @include media($medium-screen-up) {
+                    display: block;
+                }
+            }
+        }
+
+        &:hover {
+            img.overlay-image {
+                top: $base-spacing+40px;
+                transition: 2s ease;
+            }
+        }
+
+        > .container {
+            position: relative;
+            top: 70px;
+            z-index: 2;
+        }
+
+        @include media($small-screen-up) {
+            @include pad(0 9.5vw);
+        }
+    }
+
+    //
+    //  Rotator navigation
+    //  _____________________________________________
+    .rotator-next,
+    .rotator-prev {
+        @include transition(opacity $base-duration $base-timing);
+        position: absolute;
+        top: 50%;
+        z-index: 99;
+        display: none;
+        width: 54px;
+        height: em(80);
+        opacity: .65;
+        transform: translateY(-50%);
+        fill: $arrow-color;
+
+        @include media( $max-width ) {
+            display: block;
+        }
+
+        &:focus,
+        &:hover {
+            opacity: 1;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    //  Prev
+    .rotator-prev {
+        left: $arrow-distance-from-screen;
+    }
+
+    //  Next
+    .rotator-next {
+        right: $arrow-distance-from-screen;
+    }
+}

@@ -1,0 +1,125 @@
+//
+//  Comments
+//  _____________________________________________
+$base-border-radius: 3px !default;
+$base-spacing: 1.5em !default;
+$action-color: #477DCA !default;
+$dark-gray: #333 !default;
+$base-font-color: $dark-gray !default;
+$comment-gutter: 1.4em;
+$comment-image-padding: 0;
+$comment-image-width: 64px;
+$comment-color: $base-font-color;
+$comment-background: lighten($action-color, 15%);
+$comment-detail-color: transparentize($comment-color, 0.5);
+$comment-image-vert-alignment: top;
+
+//
+//  Comment container
+//  _____________________________________________
+.comments {
+    margin: $base-spacing 0;
+
+    @include media($medium-screen-up) {
+        margin: $large-spacing 0;
+    }
+}
+
+//
+//  Individual comments
+//  _____________________________________________
+.comment {
+    width: 100%;
+    display: block;
+
+    //
+    //  Layout
+    //  _____________________________________________
+    .comment-wrap {
+        @include pad($base-spacing 0);
+        display: table;
+        border-bottom: 1px solid transparentize($comment-color, 0.9);
+    }
+
+    .comment-image,
+    .comment-content {
+        display: table-cell;
+        vertical-align: $comment-image-vert-alignment;
+    }
+
+    //
+    //  Nested comments
+    //  _____________________________________________
+    &.nested {
+        // Scale indentation with the viewport
+        padding-left: 2vw;
+
+        @include media($large-screen-up) {
+            padding-left: $base-spacing*3;
+        }
+    }
+
+    //
+    //  User Avatar
+    //  _____________________________________________
+    .comment-image {
+        padding-right: $comment-gutter;
+
+        > img {
+            display: block;
+            padding: $comment-image-padding;
+            max-width: none;
+            width: $comment-image-width;
+            height: auto;
+            border-radius: $base-border-radius;
+            background: $comment-background;
+        }
+
+        .comment-reverse-order & {
+            padding-right: 0;
+            padding-left: 10px;
+        }
+    }
+
+    //
+    //  Comment Content
+    //  _____________________________________________
+    .comment-content {
+        width: 100%;
+
+        //  Base elements
+        p {
+            margin-bottom: 0.5em;
+            line-height: 1.5em;
+        }
+
+        ul {
+            @extend %default-ul;
+        }
+
+        ol {
+            @extend %default-ol;
+        }
+
+        //  Title
+        .comment-title {
+            margin: 0 0 0.5em 0;
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        //  Comment details
+        p.comment-detail {
+            color: $comment-detail-color;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+    }
+}
+
+//
+//  Reply form
+//  _____________________________________________
+.comment-respond {
+    margin-top: $base-spacing;
+}

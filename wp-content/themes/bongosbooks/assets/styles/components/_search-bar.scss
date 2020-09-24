@@ -1,0 +1,103 @@
+//
+//  Search bar
+//  _____________________________________________
+form.search-bar {
+    $base-border-color: gainsboro !default;
+    $base-border-radius: 3px !default;
+    $base-line-height: 1.5em !default;
+    $action-color: #477DCA !default;
+    $search-text-color: $french-pass;
+    $search-bar-border-color: $base-border-color;
+    $search-bar-border: 1px solid $search-bar-border-color;
+    $search-bar-background: $valhalla;
+
+    position: relative;
+
+    input[type=search] {
+        @include appearance(none);
+        background-color: $search-bar-background;
+        position: relative;
+        border-radius: 0;
+        border: none;
+        display: block;
+        font-family: $heading-font-family;
+        font-size: 24px;
+        margin: 0;
+        padding: $small-spacing 50px $small-spacing $base-spacing;
+        position: relative;
+        width: 100%;
+        box-shadow: none;
+        color: $search-text-color;
+
+        &::placeholder {
+            color: $search-text-color;
+            opacity: 1;
+        }
+
+        @include media($medium-screen-up) {
+            color: $valhalla;
+            background-color: $french-pass;
+
+            &::placeholder {
+                color: $valhalla;
+                opacity: 1;
+            }
+        }
+    }
+
+    button[type=submit] {
+        @include position(absolute, 0em 0em 0em null);
+        font-family: "bongos-books";
+        font-size: 28px;
+        background-color: transparent;
+        color: $search-text-color;
+        outline: none;
+        width: 50px;
+        padding: 5px 10px;
+
+        &:hover {
+            color: white;
+        }
+
+        @include media($medium-screen-up) {
+            color: $valhalla;
+        }
+
+        img,
+        svg {
+            max-height: 100%;
+            max-width: 100%;
+            fill: white;
+        }
+    }
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: -28px;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-right: 28px solid #ffcccc;
+        border-top: 28px solid transparent;
+        border-bottom: 28px solid transparent;
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: -28px;
+        top: 18px;
+        width: 0;
+        height: 0;
+        border-right: 10px solid black;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+    }
+}
+
+.search-404 {
+    max-width: $max-width / 2;
+}

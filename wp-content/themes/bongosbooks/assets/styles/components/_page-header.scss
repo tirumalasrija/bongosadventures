@@ -1,0 +1,48 @@
+//
+//  Page Header/Internal Banner
+//  _____________________________________________
+.page-header {
+    @include pad(em(90) default);
+    margin-bottom: em(40);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 12px;
+
+    //
+    //  Font-size scaling using em's
+    //  _____________________________________________
+    @include media( $small-screen-up ) {
+        font-size: 12px;
+    }
+    @include media( $medium-screen-up ) {
+        font-size: 14px;
+    }
+    @include media( $large-screen-up ) {
+        font-size: $em-base;
+    }
+
+    &.character-archive {
+        @include pad(em(90) default em(20) default);
+        margin-bottom: 0;
+    }
+
+    //
+    //  Title
+    //  _____________________________________________
+    .internal-page-title {
+        margin: 0;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+        margin-bottom: $small-spacing;
+        font-family: $minya-font-family;
+        font-size: em(80);
+        font-weight: bolder;
+        line-height: 1;
+        color: $supernova;
+
+        @include media($medium-screen-up) {
+            -webkit-text-stroke-width: 3px;
+        }
+    }
+}

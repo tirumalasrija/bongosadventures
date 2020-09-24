@@ -1,0 +1,1 @@
+<a href="/lessons" class="scribbled current-category-link">View All <span class="category-title"></span> Lessons</a>

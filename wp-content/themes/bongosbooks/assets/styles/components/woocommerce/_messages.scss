@@ -1,0 +1,29 @@
+//
+//  WooCommerce :: Notification Messages
+//  _____________________________________________
+
+.woocommerce-message {
+    border-top-color: $eastern-blue;
+
+    &::before {
+        content: '\e015';
+        color: $eastern-blue;
+    }
+}
+
+.woocommerce-info {
+    border-top-color: $summer-sky;
+
+    &::before {
+        color: $summer-sky;
+    }
+}
+
+.woocommerce-error {
+    border-top-color: $fire-engine-red;
+
+    &::before {
+        content: '\e016';
+        color: $fire-engine-red;
+    }
+}

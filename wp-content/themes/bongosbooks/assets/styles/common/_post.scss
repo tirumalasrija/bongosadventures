@@ -1,0 +1,31 @@
+//
+//  Post styles
+//  _____________________________________________
+.post {
+    @include clearfix();
+    clear: both;
+
+    //  Entry-meta
+    //  Displays date-posted, category, & author.
+    .entry-meta {
+        .posted-by {
+            display: none;
+        }
+    }
+
+    //  Featured image
+    .featured-image {
+        @include clearfix();
+        text-align: center;
+    }
+}
+
+//  Excerpts are displayed in post-archives & search-results.
+.excerpt {
+    margin-top: $base-spacing * 2;
+
+    //  Remove margin-top from first <article>
+    &:first-of-type {
+        margin-top: 0;
+    }
+}

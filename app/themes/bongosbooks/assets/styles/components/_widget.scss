@@ -1,0 +1,33 @@
+$base-line-height: 1.5 !default;
+$base-spacing: $base-line-height * 1em !default;
+$widget-margin-bottom: $base-spacing !default;
+$widget-title-size: $base-spacing !default;
+
+.widget {
+    margin-bottom: $widget-margin-bottom;
+
+    //  Titles
+    > h3 {
+        font-size: em(20);
+    }
+
+    //  Calendar widget
+    &.widget_calendar {
+        table {
+            margin: 0;
+        }
+        td, th {
+            text-align: center;
+        }
+    }
+
+    //  Text Widget
+    .textwidget {
+        ul {
+            @extend %default-ul;
+        }
+        ol {
+            @extend %default-ol;
+        }
+    }
+}

@@ -1,0 +1,85 @@
+body.styleguide {
+
+    section {
+        padding: 30px 0;
+    }
+
+    .colors ul {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        text-align: center;
+
+        li {
+            display: block;
+            padding: 15px;
+            flex: 1 1 25%;
+
+            &:nth-child(1) i {
+                background-color: $primary-color;
+            }
+            &:nth-child(2) i {
+                background-color: $action-color;
+            }
+            &:nth-child(3) i {
+                background-color: $base-background-color;
+            }
+            &:nth-child(4) i {
+                background-color: $secondary-background-color;
+            }
+            &:nth-child(5) i {
+                background-color: $alert-color;
+            }
+            &:nth-child(6) i {
+                background-color: $error-color;
+            }
+            &:nth-child(7) i {
+                background-color: $notice-color;
+            }
+            &:nth-child(8) i {
+                background-color: $success-color;
+            }
+
+            i {
+                display: block;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                text-align: center;
+                border: 3px solid $light-gray;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    .type {
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            li {
+                font-size: $base-font-size*1.5;
+                &:nth-child(1) {
+                    font-family: $base-font-family;
+                }
+                &:nth-child(2) {
+                    font-family: $heading-font-family;
+                }
+                &:nth-child(3) {
+                    font-family: $pangolin-font-family;
+                }
+            }
+        }
+    }
+
+    .paragraphs {
+        .large {
+            span {
+                text-decoration: underline;
+            }
+        }
+    }
+}

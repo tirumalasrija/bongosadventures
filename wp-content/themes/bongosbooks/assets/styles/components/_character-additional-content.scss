@@ -1,0 +1,80 @@
+//
+//  Additional Content area (Likes/Dislikes)
+//  _____________________________________________
+
+.page-wrap.additional-content {
+    background-color: $light-purple;
+    padding: $large-spacing 0;
+    margin: $base-spacing 0 $large-spacing 0;
+}
+
+.character-additional-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include media($small-screen-up) {
+        flex-direction: row;
+    }
+
+    &-navigation {
+        flex: 0 0 100%;
+
+        @include media($small-screen-up) {
+            flex: 0 0 auto;
+        }
+
+        ul {
+            li {
+                display: block;
+
+                a {
+                    @include spinning-arrow($small-spacing, '../images/white-right-arrow.png');
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    padding: $small-spacing $base-spacing;
+                    margin: 0;
+                    font-family: $pangolin-font-family;
+                    font-size: em(36);
+                    color: white;
+                    transition: padding $base-timing $base-duration;
+
+                    &:before, &:after {
+                        display: none;
+                    }
+
+                    &:hover, &:visited, &:focus {
+                        padding: $small-spacing 75px $small-spacing $base-spacing;
+                        &:before, &:after {
+                            display: block;
+                        }
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+    &-display {
+        flex: 0 0 100%;
+        padding: $base-spacing;
+        background-color: rgba(255, 255, 255, 0.7);
+
+        @include media($small-screen-up) {
+            flex: 1 1 50%;
+        }
+
+        .content-item {
+            display: none;
+
+            &:first-of-type {
+                display: block;
+            }
+
+            ul {
+                @extend %default-ul;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "bongos-books-lessons",
+  "version": "1.0.0",
+  "description": "Bongos Books Lessons Plugin",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "webpack -p --display-reasons",
+    "dev": "webpack --hide-modules --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "yarn": "^1.3.2"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.18.13",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "vue": "^2.5.5",
+    "vue-loader": "^13.5.0",
+    "webpack": "^3.8.1"
+  }
+}

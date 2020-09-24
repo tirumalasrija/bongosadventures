@@ -1,0 +1,17 @@
+{
+	"name": "tmprod/meta-box-aio",
+	"description": "Private repository for Meta Box All-In-One.",
+	"type": "wordpress-plugin",
+	"authors": [
+		{
+			"name": "Trademark Productions",
+			"email": "cm@tmprod.com"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0"
+	},	
+	"extra": {
+		"installer-name": "meta-box-aio"
+	}
+}

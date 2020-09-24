@@ -1,0 +1,25 @@
+//
+//  Javascript Disabled
+//  _____________________________________________
+html.no-js {
+
+    //
+    //  Open navigation menus
+    //  _____________________________________________
+    ul.navigation-menu {
+        display: block !important;
+    }
+
+    //
+    //  Display only first banner in rotators
+    //  _____________________________________________
+    .rotator {
+        .banner {
+            display: none;
+
+            &:first-child {
+                display: block;
+            }
+        }
+    }
+}

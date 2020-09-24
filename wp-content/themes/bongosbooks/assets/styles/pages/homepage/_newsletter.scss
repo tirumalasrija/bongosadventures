@@ -1,0 +1,116 @@
+section.newsletter {
+    background-color: $blue-stone;
+    padding: $large-spacing $base-spacing;
+    text-align: center;
+
+    h2 {
+        font-family: $heading-font-family;
+        color: $supernova;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-family: $base-font-family;
+        font-size: em(24);
+        color: $french-pass;
+    }
+
+    .newsletter-signup {
+        display: block;
+        margin: 0;
+        width: 100%;
+
+        @include media($small-screen-up) {
+            width: 80%;
+        }
+
+        form {
+            display: block;
+
+            @include media($small-screen-up) {
+                display: flex;
+            }
+
+            .gform_body {
+                width: 100%;
+
+                ul {
+                    li {
+                        padding: 0;
+                        margin: 0;
+
+                        .ginput_container {
+                            margin: 0;
+
+                            // Specific values to line up with button, sorry.
+                            input[type=text] {
+                                font-size: 20px;
+                                background-color: white;
+                                margin: 0;
+                                border: none;
+                                border-radius: 0;
+                                width: 100%;
+                                line-height: 2.2;
+                            }
+                        }
+                    }
+                }
+
+                @include media($small-screen-up) {
+                    flex: 0 0 80%;
+                }
+            }
+
+            .gform_footer {
+                width: 100%;
+                padding: 0;
+                margin: 0;
+
+                @include media($small-screen-up) {
+                    flex: 0 0 20%;
+                }
+
+                input[type=submit] {
+                    @include button($small-spacing, $supernova, white, false);
+                    flex: 1 1 auto;
+                    width: 100%;
+
+                    @include media($medium-screen-up) {
+                        flex: 0 0 20%;
+                    }
+
+                    &:before, &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .gform_confirmation_message {
+            color: white;
+        }
+
+        .gfield_label {
+            display: none;
+        }
+
+        @include media($small-screen-up) {
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        a.button {
+            @include button($base-spacing, $supernova, white, false);
+            flex: 1 1 auto;
+            width: 100%;
+
+            @include media($medium-screen-up) {
+                flex: 0 0 20%;
+            }
+
+            &:before, &:after {
+                display: none;
+            }
+        }
+    }
+}

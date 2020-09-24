@@ -1,0 +1,65 @@
+//
+//  Lesson "Previous/Next" buttons
+//  Appear below quiz module, last on lesson pages
+//  _____________________________________________
+.lesson-navigation {
+    display: flex;
+    flex-direction: column;
+    margin-top: $large-spacing;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    @include media($small-screen-up) {
+        flex-direction: row;
+    }
+
+    &-item {
+        flex: 1 1 auto;
+        background-color: $valhalla;
+        color: $supernova;
+        border-radius: $base-border-radius;
+        padding: $base-spacing;
+        margin-bottom: $small-spacing;
+        line-height: 1.2;
+        font-family: $heading-font-family;
+        font-size: em(30);
+        transition: transform $base-duration $base-timing;
+
+        @include media($small-screen-up) {
+            flex: 0 0 33%;
+            margin-bottom: 0;
+        }
+
+        &.view-all {
+            text-align: center;
+            flex: 1 1 auto;
+            width: 100%;
+
+            @include media($small-screen-up) {
+                flex: 0 0 auto;
+                display: flex;
+                width: 150px;
+                height: 150px;
+                background-color: $blue-stone;
+                border-radius: 50%;
+                align-self: center;
+                justify-content: center;
+                align-items: center;
+                color: $supernova;
+            }
+        }
+
+        &:hover {
+            transform: scale(1.1);
+            color: $supernova;
+        }
+
+        .lesson-title {
+            font-weight: normal;
+            font-family: $pangolin-font-family;
+            font-size: 26px;
+            color: $white;
+        }
+    }
+}

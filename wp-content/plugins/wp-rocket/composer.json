@@ -1,0 +1,17 @@
+{
+	"name": "tmprod/wp-rocket",
+	"description": "Private repository for WP Rocket.",
+	"type": "wordpress-plugin",
+	"authors": [
+		{
+			"name": "Trademark Productions",
+			"email": "cm@tmprod.com"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0"
+	},
+	"extra": {
+		"installer-name": "wp-rocket"
+	}
+}

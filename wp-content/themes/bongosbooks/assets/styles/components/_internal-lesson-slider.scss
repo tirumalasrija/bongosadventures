@@ -1,0 +1,34 @@
+section.internal-lesson-slider {
+    text-align: center;
+    margin-bottom: $large-spacing;
+
+    h2 {
+        display: block;
+        padding: $small-spacing $large-spacing;
+        margin: 0 auto $large-spacing auto;
+        background-color: $pink;
+        text-align: center;
+        color: white;
+        text-transform: uppercase;
+        width: 100%;
+
+        @include media($small-screen-up) {
+            width: 70%;
+        }
+    }
+
+    .lesson-blocks {
+        margin: 0 0 $base-spacing;
+
+        .lesson {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    }
+
+    .rotator-prev, .rotator-next {
+        display: inline-block;
+        max-width: 75px;
+        margin: $base-spacing;
+    }
+}

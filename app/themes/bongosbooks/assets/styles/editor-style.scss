@@ -1,0 +1,13 @@
+@import "main";
+
+body {
+    margin: 12px !important;
+
+    ol {
+        @extend %default-ol;
+    }
+
+    ul {
+        @extend %default-ul;
+    }
+}

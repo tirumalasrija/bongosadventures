@@ -1,0 +1,173 @@
+//
+//  Visually hide an element, but will be read by screen-readers.
+//  _____________________________________________
+@mixin visually-hidden() {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+//
+//  .screen-reader-text
+//  Allow an element to be read by screen-readers
+//  for the impaired, but is otherwise hidden.
+//  _____________________________________________
+.screen-reader-text {
+    @include visually-hidden;
+}
+
+//
+//  Remove List Styles
+//  _____________________________________________
+@mixin remove-list-style(
+    $_margin: 0,
+    $_padding: 0,
+    $_overflow: hidden
+) {
+    list-style-type: none;
+    padding: $_padding;
+    margin: $_margin;
+}
+
+//
+//  Inline Menu
+//  _____________________________________________
+@mixin inline-list(
+    $_list-item__padding: 0,
+    $_list-item__margin: 0
+) {
+    @include remove-list-style();
+
+    li {
+        padding: $_list-item__padding;
+        margin: $_list-item__margin;
+        display: inline-block;
+    }
+}
+
+//
+//  Category Nav Variant
+//  _____________________________________________
+@mixin category-nav-variant(
+    $_icon-url: '../images/lessons/icons/categories/0icon.png',
+    $_height: 200px
+) {
+    a {
+        &:before {
+            content: "";
+            background-image: url($_icon-url);
+            background-repeat: no-repeat;
+            background-position: top center;
+            height: $_height;
+            display: block;
+        }
+    }
+}
+
+//
+//  Spinning Arrow
+//  _____________________________________________
+@mixin spinning-arrow(
+    $_right: $base-spacing+10px,
+    $_image-path: '../images/right-arrow.png'
+) {
+    &:after {
+        content: url($_image-path);
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: $_right;
+        height: 48px;
+    }
+
+    &:hover {
+        &:after {
+            animation: spin 0.3s linear 0s normal;
+        }
+    }
+
+    @keyframes spin {
+        0% {
+            transform: translateY(-50%) rotate(360deg);
+        }
+        100% {
+            transform: translateY(-50%) rotate(0deg);
+        }
+    }
+}
+
+//
+//  Button
+//  _____________________________________________
+@mixin button(
+    $_padding: $small-spacing/2 $base-spacing*2,
+    $_background-color: $action-color,
+    $_color: $supernova,
+    $_pencil: false
+) {
+    display: inline-block;
+    padding: $_padding;
+    border: 0;
+    background-color: $_background-color;
+    color: $_color;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 30px;
+    font-family: $heading-font-family;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color $base-duration $base-timing;
+    appearance: none;
+    -webkit-font-smoothing: antialiased;
+    user-select: none;
+
+    &:hover,
+    &:focus {
+        background-color: shade($_background-color, 20%);
+        color: #fff;
+    }
+
+    @include media($small-screen-down) {
+        padding: $small-spacing/2 $small-spacing;
+    }
+
+    @if $_pencil {
+        text-transform: uppercase;
+        position: relative;
+        left: -10px;
+        transition: $base-duration $base-timing;
+
+        @include media($small-screen-up) {
+            left: 0;
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            right: -20px;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-left: 20px solid #ffcccc;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            right: -20px;
+            top: 13px;
+            width: 0;
+            height: 0;
+            border-left: 7px solid black;
+            border-top: 7px solid transparent;
+            border-bottom: 7px solid transparent;
+        }
+    }
+}

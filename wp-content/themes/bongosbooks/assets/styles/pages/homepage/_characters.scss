@@ -1,0 +1,83 @@
+.characters {
+    position: relative;
+    margin-top: 0;
+    background-color: transparent;
+    z-index: 2;
+
+    @include media($medium-screen-up) {
+        margin-top: -160px;
+    }
+
+    .character-blocks {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        align-items: flex-end;
+        font-size: 10px;
+
+        @include media($small-screen-up) {
+            font-size: 12px;
+        }
+
+        @include media($medium-screen-up) {
+            font-size: 14px;
+        }
+
+        @include media($large-screen-up) {
+            font-size: $base-font-size;
+        }
+
+        .block {
+            flex: 1 1 200px;
+            position: relative;
+            text-align: center;
+            border-bottom: $small-spacing;
+            padding-top: $base-spacing;
+
+            img {
+                position: relative;
+                max-height: em(600px);
+                margin-bottom: em($base-spacing);
+            }
+
+            @include media($small-screen-up) {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            h4 {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: $base-spacing;
+                margin: 0;
+                color: white;
+                text-transform: uppercase;
+                font-size: 30px;
+            }
+
+            .block-button {
+                display: block;
+                position: relative;
+                padding: $base-spacing 100px $base-spacing $base-spacing;
+                font-family: $pangolin-font-family;
+                font-size: em(26);
+                line-height: 1.2;
+                transition: transform 1s ease;
+
+                @include media($large-screen-up) {
+                    padding: $base-spacing 100px $base-spacing $base-spacing*2;
+                }
+
+                @include spinning-arrow();
+            }
+
+            // Shrink goblin children
+            &:nth-child(1), &:nth-child(2) {
+                img {
+                    max-height: em(400px);
+                }
+            }
+        }
+    }
+}

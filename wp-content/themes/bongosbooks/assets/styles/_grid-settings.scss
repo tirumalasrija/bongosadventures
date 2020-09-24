@@ -1,0 +1,46 @@
+//
+//  Grid Settings
+//
+//  This file configures Neat, a sass grid framework built on Bourbon.
+//
+//  How to Use:
+//  1. Open the design in Photoshop.
+//  2. Measure the distance between the far-left & far-right of the content area.
+//     Assign this value to the $max-width variable below.
+//  3. Load the grid calculator at http://gridcalculator.dk/
+//  4. Play with the settings until a combination is possible. Try to match the design as much as possible.
+//  5. In Photoshop go to "View"->"New Guide Layout" & enter your grid's values.
+//  6. Confirm it works. Then replace the variable values below to match.
+//
+//  Then you should have an in-sync design & grid framework.
+//
+//  View Neat's documentation: http://thoughtbot.github.io/neat-docs/latest/
+//  _____________________________________________
+
+// Neat helper functions
+@import "../../bower_components/neat/app/assets/stylesheets/neat-helpers";
+
+// Change the grid settings
+$grid-columns: 12 !global;
+$max-width: 1196px !global;
+$mega-width: 1850px !global;
+$gutter: em(20) !global;
+
+// Neat Breakpoints
+$small-screen: 568px;
+$medium-screen: 768px;
+$large-screen: 980px;
+$x-large-screen: 1420px;
+$xx-large-screen: 1500px;
+
+$small-screen-up: new-breakpoint(min-width $small-screen);
+$medium-screen-up: new-breakpoint(min-width $medium-screen);
+$large-screen-up: new-breakpoint(min-width $large-screen);
+$x-large-screen-up: new-breakpoint(min-width $x-large-screen);
+$xx-large-screen-up: new-breakpoint(min-width $xx-large-screen);
+$max-width-up: new-breakpoint(min-width $max-width);
+
+$max-width-down: new-breakpoint(max-width ($max-width - 1px));
+$large-screen-down: new-breakpoint(max-width ($large-screen - 1px));
+$medium-screen-down: new-breakpoint(max-width ($medium-screen - 1px));
+$small-screen-down: new-breakpoint(max-width ($small-screen - 1px));

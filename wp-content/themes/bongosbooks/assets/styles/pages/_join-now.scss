@@ -1,0 +1,31 @@
+//
+//  Join Now page
+//  _____________________________________________
+
+body.join-now {
+    .entry-content {
+        .two_third {
+            padding-right: $base-spacing;
+        }
+
+        .join-now-cta {
+            font-family: $heading-font-family;
+            font-size: em(24);
+            padding: $base-spacing;
+            background: $eastern-blue;
+            color: $white;
+            border-radius: $base-border-radius;
+            text-align: center;
+
+            .signup-text {
+                font-family: $pangolin-font-family;
+                color: $supernova;
+                font-weight: bold;
+            }
+
+            a {
+                @include button($base-spacing $base-spacing*2);
+            }
+        }
+    }
+}

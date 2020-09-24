@@ -1,0 +1,20 @@
+section.featured-lessons {
+    padding: $large-spacing 0;
+    background: url('../images/sandbar.jpg') top center;
+    background-size: cover;
+
+    @include media($medium-screen-up) {
+        padding: $large-spacing*2 $large-spacing;
+    }
+
+    h2 {
+        display: block;
+        background-color: $valhalla;
+        color: $supernova;
+        padding: $small-spacing;
+        text-align: center;
+        width: 100%;
+    }
+
+    // Split "lesson-blocks" into seperate, globally-accessible file
+}

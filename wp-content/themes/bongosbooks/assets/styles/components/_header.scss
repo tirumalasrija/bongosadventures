@@ -1,0 +1,108 @@
+//
+//  Header
+//  _____________________________________________
+.site-header {
+
+    //  Site title/logo
+    .site-title {
+        position: relative;
+        left: 0;
+        font-size: em(20);
+        font-weight: normal;
+        margin: $small-spacing;
+        float: left;
+        line-height: 1;
+        width: 50%;
+        z-index: 2;
+
+        img {
+            height: auto;
+            width: auto;
+            max-height: 100px;
+        }
+
+        @include media($medium-screen-up) {
+            min-width: 273px;
+            position: absolute;
+            margin: 0;
+            left: $base-spacing;
+            top: $base-spacing;
+            width: auto;
+
+            img {
+                max-height: none;
+            }
+        }
+
+        //  Hide site-title if a logo was added in the admin.
+        body.has-logo & .name {
+            @include visually-hidden;
+        }
+    }
+
+    //
+    //  Header Widget Area
+    //  _____________________________________________
+    .header-widgets {
+        position: relative;
+        width: 100%;
+
+        @include media($medium-screen-up) {
+            position: absolute;
+            top: 45px;
+            right: $base-spacing;
+            width: auto;
+        }
+
+        .widget {
+            margin: 0;
+        }
+    }
+}
+
+//
+//  Mast
+//  Contains the logo & header widgets
+//  _____________________________________________
+.mast {
+
+    > .container {
+        margin-left: 0;
+
+        @include media($large-screen-up) {
+            margin-left: 320px;
+        }
+
+        @include media($mega-width) {
+            margin-left: auto;
+        }
+    }
+}
+
+//
+//  WooCommerce Account Links
+//  _____________________________________________
+.woocommerce-links {
+    position: relative;
+    font-size: 14px;
+    right: 0;
+    top: 0;
+
+    @include media($medium-screen-up) {
+        position: absolute;
+        font-size: $base-font-size;
+        right: $base-spacing;
+    }
+
+    .my-account, .login {
+        margin-left: 5px;
+        background: $eastern-blue;
+        color: white;
+        padding: $small-spacing/2 $base-spacing;
+        border-bottom: 4px solid $blue-stone;
+
+        &:hover {
+            background: lighten($eastern-blue, 20%);
+        }
+    }
+}
